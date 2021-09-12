@@ -1,0 +1,13 @@
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.exe
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.deps.json
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.runtimeconfig.json
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.runtimeconfig.dev.json
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.dll
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\bin\Debug\netcoreapp3.1\PetDiscovery.pdb
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.csprojAssemblyReference.cache
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.AssemblyInfoInputs.cache
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.AssemblyInfo.cs
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.csproj.CoreCompileInputs.cache
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.dll
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.pdb
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery\obj\Debug\netcoreapp3.1\PetDiscovery.genruntimeconfig.cache
