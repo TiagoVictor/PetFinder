@@ -1,4 +1,5 @@
-﻿using PetDiscovery.IDAO;
+﻿using Npgsql;
+using PetDiscovery.IDAO;
 using PetDiscovery.Model;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,10 @@ namespace PetDiscovery.DAO
 {
     class FoundedPetsDao : IFoundedPets
     {
+        DaoFactory connection = new DaoFactory();
+        NpgsqlCommand cmd = new NpgsqlCommand();
+        String message = "";
+
         public void DeleteFoundedPets(FoundedPets founded)
         {
             throw new NotImplementedException();
