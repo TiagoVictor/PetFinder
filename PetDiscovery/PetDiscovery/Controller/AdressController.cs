@@ -1,28 +1,26 @@
-﻿using PetDiscovery.Model;
+﻿using PetDiscovery.DAO;
+using PetDiscovery.Model;
 
 namespace PetDiscovery.Controller
 {
     public class AdressController
     {
 
-        public void Insert(Adress adress)
-        {
+        AdressDao ad = new AdressDao();
 
+        public void Insert(Adress adress, LogedUser loged)
+        {
+            ad.InsertAdress(adress, loged);
         }
 
         public void Update(Adress adress)
         {
-
+            ad.UpdateAdress(adress);
         }
 
         public void Delete(Adress adress)
         {
-
-        }
-
-        public void List(Adress adress)
-        {
-
+            ad.DeleteAdress(adress);
         }
     }
 }

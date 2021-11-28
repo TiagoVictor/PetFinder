@@ -14,15 +14,17 @@ namespace PetDiscovery.DAO
         String message = "";
 
 
-        public void DeleteAdress(Adress adress)
+        public int DeleteAdress(Adress adress)
         {
+            var wasDeleted = 1;
+
             cmd.CommandText = "delete from tb_Endereco where endereco_Id = @Id";
             cmd.Parameters.AddWithValue("@Id", adress.Id);
 
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasDeleted = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -32,6 +34,8 @@ namespace PetDiscovery.DAO
             {
                 connection.Close();
             }
+            
+            return wasDeleted;
         }
 
         public Adress GetAdress(int rollNo)
@@ -44,9 +48,11 @@ namespace PetDiscovery.DAO
             throw new NotImplementedException();
         }
 
-        public void InsertAdress(Adress adress)
+        public int InsertAdress(Adress adress, LogedUser loged)
         {
-            cmd.CommandText = "insert into tb_Endereco (endereco_Id, endereco_cliente_Id, endereco_Cidade, endereco_UF, endereco_Pais, endereco_Rua, endereco_Numero) values (@Id, @IdCliente, @Cidade, @UF, @Pais, @Rua, @Numero) ";
+            var wasInsert = 1;
+
+            cmd.CommandText = "insert into tb_Endereco (endereco_Id, endereco_cliente_Id, endereco_Cidade, endereco_UF, endereco_Pais, endereco_Rua, endereco_Numero, endereco_cliente_Id) values (@Id, @IdCliente, @Cidade, @UF, @Pais, @Rua, @Numero, @ClienteId) ";
             cmd.Parameters.AddWithValue("@Id", adress.Id);
             cmd.Parameters.AddWithValue("@IdCliente", adress.CustomerId);
             cmd.Parameters.AddWithValue("@Cidade", adress.City);
@@ -54,11 +60,12 @@ namespace PetDiscovery.DAO
             cmd.Parameters.AddWithValue("@Pais", adress.Country);
             cmd.Parameters.AddWithValue("@Rua", adress.Street);
             cmd.Parameters.AddWithValue("@Numero", adress.Number);
+            cmd.Parameters.AddWithValue("@ClienteId", loged.Id);
 
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasInsert = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -69,18 +76,22 @@ namespace PetDiscovery.DAO
                 connection.Close();
             }
 
+            return wasInsert;
+
         }
 
-        public void UpdateAdress(Adress adress)
+        public int UpdateAdress(Adress adress)
         {
+            var wasUpdated = 1;
+
             cmd.CommandText = "update tb_Endereco set endereco_Id = @Id, endereco_cliente_Id = @IdCliente, endereco_Cidade = @Cidade, endereco_UF = @UF, endereco_Pais = @Pais, endereco_Rua = @Rua, endereco_Numero = @Numero" ;
 
-            if (adress.Id != null)
+            if (adress.Id != 0)
             {
                 cmd.Parameters.AddWithValue("@Id", adress.Id);
             }
 
-            if (adress.CustomerId != null)
+            if (adress.CustomerId != 0)
             {
                 cmd.Parameters.AddWithValue("@IdCliente", adress.CustomerId);
             }
@@ -113,7 +124,7 @@ namespace PetDiscovery.DAO
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasUpdated = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -123,6 +134,8 @@ namespace PetDiscovery.DAO
             {
                 connection.Close();
             }
+
+            return wasUpdated;
 
         }
     }

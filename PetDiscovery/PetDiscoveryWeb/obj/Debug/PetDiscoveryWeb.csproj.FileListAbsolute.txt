@@ -1,0 +1,2 @@
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscoveryWeb\obj\Debug\PetDiscoveryWeb.csproj.AssemblyReference.cache
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscoveryWeb\obj\Debug\PetDiscoveryWeb.csproj.CoreCompileInputs.cache

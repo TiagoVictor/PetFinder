@@ -13,8 +13,10 @@ namespace PetDiscovery.DAO
         NpgsqlCommand cmd = new NpgsqlCommand();
         String message = "";
 
-        public void DeleteCustomer(Customer customer)
+        public int DeleteCustomer(Customer customer)
         {
+            var wasDeleted = 1;
+
             cmd.CommandText = "delete from tb_Cliente where cliente_Id = @Id";
 
             cmd.Parameters.AddWithValue("@Id", customer.Id);
@@ -22,7 +24,7 @@ namespace PetDiscovery.DAO
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasDeleted = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -32,20 +34,48 @@ namespace PetDiscovery.DAO
             {
                 connection.Close();
             }
+
+            return wasDeleted;
         }
 
-        public List<Customer> GetAllCustomer()
+        public Customer GetCustomer(string email, string password)
         {
-            throw new Exception();
+            Customer customer = new Customer();
+
+            cmd.CommandText = "select * from tb_Cliente where cliente_Email = @Email and cliente_Password = @Senha";
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", password);
+
+            try
+            {
+                cmd.Connection = connection.Connect();
+                NpgsqlDataReader cmdR = cmd.ExecuteReader();
+
+                while (cmdR.Read())
+                {
+                    customer.Id = (int)Convert.ToInt64(cmdR["cliente_Id"].ToString());
+                    customer.Name = cmdR["cliente_Nome"].ToString();
+                    customer.Email = cmdR["cliente_Email"].ToString();
+                    customer.Password = cmdR["cliente_Password"].ToString();
+                }
+                cmdR.Close();
+            }
+            catch(Exception e)
+            {
+                this.message = "Erro " + e;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return customer;
         }
 
-        public Customer GetCustomer(int id)
+        public int InsertCustomer(Customer customer)
         {
-            throw new NotImplementedException();
-        }
-
-        public void InsertCustomer(Customer customer)
-        {
+            var wasInsert = 1;
             cmd.CommandText = "insert into tb_Cliente (cliente_Id, cliente_Nome, cliente_Email) values (@Id, @Nome, @Email)";
 
             cmd.Parameters.AddWithValue("@Id", customer.Id);
@@ -55,22 +85,27 @@ namespace PetDiscovery.DAO
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasInsert = cmd.ExecuteNonQuery();
                 this.message = "Cadastrado com sucesso";
             }
-            catch
+            catch(Exception e)
             {
-                this.message = "Deu ruim campeão!";
+                wasInsert = 0;
+                this.message = "Deu ruim campeão! " + e;
             }
             finally
             {
                 connection.Close();
             }
+
+            return wasInsert;
             
         }
 
-        public void UpdateCustomer(Customer customer)
+        public int UpdateCustomer(Customer customer)
         {
+            var wasUpdated = 1;
+
             cmd.CommandText = "update tb_Cliente set cliente_Nome = @Nome, cliente_email = @Email where cliente_id = @Id";
 
             if(customer.Email != null)
@@ -86,7 +121,7 @@ namespace PetDiscovery.DAO
             try
             {
                 cmd.Connection = connection.Connect();
-                cmd.ExecuteNonQuery();
+                wasUpdated = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -96,6 +131,8 @@ namespace PetDiscovery.DAO
             {
                 connection.Close();
             }
+
+            return wasUpdated;
         }
     }
 }

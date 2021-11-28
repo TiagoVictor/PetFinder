@@ -7,8 +7,8 @@ namespace PetDiscovery.IDAO
     {
         public List<Adress> GetAllAdress();
         public Adress GetAdress(int rollNo);
-        public void UpdateAdress(Adress adress);
-        public void DeleteAdress(Adress adress);
-        public void InsertAdress(Adress adress);
+        public int UpdateAdress(Adress adress);
+        public int DeleteAdress(Adress adress);
+        public int InsertAdress(Adress adress, LogedUser loged);
     }
 }
