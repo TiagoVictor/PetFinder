@@ -9,41 +9,45 @@ using System.Threading.Tasks;
 
 namespace PetDiscovery2.Controllers
 {
-    public class CustomerController : Controller
+    public class LoginController : Controller
     {
-        // GET: CustomerController
+        // GET: LoginController
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult LostPetView()
-        {
-            return View();
-        }
-
-        // GET: CustomerController/Details/5
+        // GET: LoginController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: CustomerController/Create
+        // GET: LoginController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CustomerController/Create
+        // POST: LoginController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Customer customer)
+        public ActionResult Loginho(Customer customer)
         {
-            var teste = new CustomerBaseController();
+            var baseController = new CustomerBaseController();
+            var logedUser = new LogedUser();
+            var customerInfo = baseController.CanLogin(customer);
 
             try
             {
-                teste.Insert(customer);
+                if (customerInfo.Id > 0)
+                {
+                    logedUser.Id = customerInfo.Id;
+                    logedUser.Nome = customerInfo.Name;
+                    logedUser.Email = customerInfo.Email;
+
+                    return RedirectToAction("Index","Home", logedUser);
+                }
 
                 return RedirectToAction(nameof(Index));
             }
@@ -53,37 +57,13 @@ namespace PetDiscovery2.Controllers
             }
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LostPetCallView(LogedUser loged)
-        {
-            return RedirectToAction("Customer","LostPetView", loged);
-        }
-
-
-        [HttpPost]
-        public ActionResult CreateAnimal(Animals animals, LogedUser loged)
-        {
-            var teste = new CustomerBaseController();
-
-            try
-            {
-                teste.CreateAnimal(loged, animals);
-                return RedirectToAction("Home", "Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: CustomerController/Edit/5
+        // GET: LoginController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: CustomerController/Edit/5
+        // POST: LoginController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -98,13 +78,13 @@ namespace PetDiscovery2.Controllers
             }
         }
 
-        // GET: CustomerController/Delete/5
+        // GET: LoginController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: CustomerController/Delete/5
+        // POST: LoginController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

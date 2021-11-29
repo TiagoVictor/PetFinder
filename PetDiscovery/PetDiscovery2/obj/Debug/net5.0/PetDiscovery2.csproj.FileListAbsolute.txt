@@ -165,3 +165,5 @@ C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\bin\Debug\net5.0\run
 C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\bin\Debug\net5.0\PetDiscovery.dll
 C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\bin\Debug\net5.0\PetDiscovery.pdb
 C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\obj\Debug\net5.0\Razor\Views\Customer\Index.cshtml.g.cs
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\eltia\Desktop\PetFinder\PetDiscovery\PetDiscovery2\obj\Debug\net5.0\Razor\Views\Customer\LostPetView.cshtml.g.cs

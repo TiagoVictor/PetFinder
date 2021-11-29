@@ -76,11 +76,12 @@ namespace PetDiscovery.DAO
         public int InsertCustomer(Customer customer)
         {
             var wasInsert = 1;
-            cmd.CommandText = "insert into tb_Cliente (cliente_Id, cliente_Nome, cliente_Email) values (@Id, @Nome, @Email)";
+            cmd.CommandText = "insert into tb_Cliente (cliente_Id, cliente_Nome, cliente_Email, cliente_Password) values (@Id, @Nome, @Email, @Senha)";
 
             cmd.Parameters.AddWithValue("@Id", customer.Id);
             cmd.Parameters.AddWithValue("@Nome", customer.Name);
             cmd.Parameters.AddWithValue("@Email", customer.Email);
+            cmd.Parameters.AddWithValue("@Senha", customer.Password);
 
             try
             {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PetDiscovery.Model;
 using PetDiscovery2.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,18 @@ namespace PetDiscovery2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private LogedUser logedUser ;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(LogedUser logedUser)
         {
-            return View();
+
+            return View(logedUser);
         }
 
         public IActionResult Privacy()

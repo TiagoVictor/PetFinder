@@ -2,7 +2,29 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model PetDiscovery.Model.LogedUser
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bem Vindo!</h1>
+    <p>teste @Model.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Perdeu Seu Pet?</h2>
+            <p>
+                Se você perdeu seu Pet, fique calmo e deixa com a gente, clique no botão abaixo, insira os dados do cadastro e deixe com o nosso algoritimo!
+            </p>
+            <p><a class="btn btn-default" href="/Customer/">Acesse aqui &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Encontrou um Pet?</h2>
+            <p>Se você encontrou algum Pet não tem problema, clique no botão abaixo, cadastre o Pet no nosso sistema e deixe que nosso algoritimo encontre o seu dono!</p>
+            <p><a class="btn btn-default" href="/Customer/Index">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Consulte Aqui seus Pet´s cadastrados!</h2>
+            <p>Caso você queira ver seus Pet´s cadastrados clique no botão abaixo e confira!</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>
 </div>

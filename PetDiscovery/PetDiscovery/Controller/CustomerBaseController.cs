@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PetDiscovery.Controller
 {
-    public class CustomerController
+    public class CustomerBaseController
     {
         CustomerDao cd = new CustomerDao();
         AnimalsDao ad = new AnimalsDao();
@@ -62,6 +62,19 @@ namespace PetDiscovery.Controller
         public void CreateAdress (LogedUser loged, Adress adress)
         {
             ed.InsertAdress(adress, loged);
+        }
+
+        public Customer CanLogin(Customer customer)
+        {
+            var teste = cd.GetCustomer(customer.Email, customer.Password);
+
+            if (teste.Id > 0 ){
+                return teste;
+            }
+            else
+            {
+                return teste;
+            }
         }
     }
 }
