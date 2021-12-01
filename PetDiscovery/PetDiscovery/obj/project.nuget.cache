@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOUwKVK2pt2x0II/m7EZnd7xkTvZaW+tgqyzeGtUsfrFVm7FKyTnARNaMrLClHGwEvs5sXMefDuGM25KgpF6pA==",
+  "dgSpecHash": "QVJu1e/4YoAvTQzkgObI5AaPSLhKgi6Iu/NDkAN0X/16yW0Xf8Go6oYsf9OHlxNqjvOcj9rNKk4dozv824z3Yw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
+  "projectFilePath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eltia\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\eltia\\.nuget\\packages\\fluentnhibernate\\3.1.0\\fluentnhibernate.3.1.0.nupkg.sha512",

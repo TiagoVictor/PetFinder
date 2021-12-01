@@ -22,6 +22,11 @@ namespace PetDiscovery2.Controllers
             return View();
         }
 
+        public ActionResult FoundedPetView()
+        {
+            return View();
+        }
+
         // GET: CustomerController/Details/5
         public ActionResult Details(int id)
         {
@@ -51,6 +56,40 @@ namespace PetDiscovery2.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpPost]
+        public ActionResult CreateFoundedAnimal(Animals animals)
+        {
+            var teste = new CustomerBaseController();
+            var loged = new LogedUser();
+            try
+            {
+                teste.CreateAnimal(loged, animals);
+                return RedirectToAction("Home", "Index");
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult CreateLostAnimal(Animals animals)
+        {
+            var teste = new CustomerBaseController();
+            var loged = new LogedUser();
+            try
+            {
+                teste.CreateAnimal(loged, animals);
+                return RedirectToAction("Home", "Index");
+            }
+            catch
+            {
+                return View();
+            }
+
         }
 
         [HttpPost]

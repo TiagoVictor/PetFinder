@@ -6049,28 +6049,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eltia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\eltia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
+      "projectUniqueName": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
       "projectName": "PetDiscovery",
-      "projectPath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
+      "projectPath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetFinder\\PetDiscovery\\PetDiscovery\\PetDiscovery.csproj",
       "packagesPath": "C:\\Users\\eltia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetDiscovery\\PetDiscovery\\obj\\",
+      "outputPath": "C:\\Users\\eltia\\Desktop\\PetFinder\\PetFinder\\PetDiscovery\\PetDiscovery\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\eltia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6131,7 +6123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
